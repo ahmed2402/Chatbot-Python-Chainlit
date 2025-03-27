@@ -1,8 +1,8 @@
-import chainlit as cl
+# import chainlit as cl
 
-@cl.on_message
-async def main(message : cl.Message):
+# @cl.on_message
+# async def main(message : cl.Message):
 
-    respone = f"You said: {message.content}"
+#     respone = f"You said: {message.content}"
     
-    await cl.Message(content=respone).send()
+#     await cl.Message(content=respone).send()
