@@ -15,3 +15,4 @@ while True:
         break
     response = model.generate_content(user_input)
     print(response.text)
+    
