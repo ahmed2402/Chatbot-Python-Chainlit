@@ -34,8 +34,20 @@ async def handle_chat_start():
 
 @cl.on_message
 async def handle_message(message: cl.Message):
-    prompt = message.content
-    response = model.generate_content(prompt)
+
+    history = cl.user_session.get("history")
+    history.append({"role" : "user", "content" : message.content})
+
+    frmt_history = []
+    for msg in history:
+        role = "user" if msg['role'] == "user" else "model"
+        frmt_history.append({"role" : role , "parts" : [{"text" : msg["content"]}]})
+
+
+    response = model.generate_content(frmt_history)
 
     response_text = response.text if hasattr(response , "text") else ""
-    await cl.Message(content=response_text).send()    
+    history.append({"role" : "assistant", "content": response_text})
+    cl.user_session.set("history" , history)
+
+    await cl.Message(content=response_text).send()
