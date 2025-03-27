@@ -2,7 +2,7 @@ chainlit: 2.4.1
 
 # Interface settings
 ui:
-  name: "Chainlit Chatbot"
+  name: "GoofyGPT"
   description: "A simple Question Answering Stateful chatbot with GitHub authentication built with Python, UV, and Chainlit."
 
 # Message settings
