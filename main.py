@@ -52,3 +52,6 @@ async def handle_message(message: cl.Message):
 
     await cl.Message(content=response_text).send()
 
+if __name__ == "__main__":
+    import chainlit as cl
+    cl.run(host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
