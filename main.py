@@ -11,21 +11,21 @@ genai.configure(api_key=gemini_api_key)
 
 model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
-@cl.oauth_callback
-def oaut_callback(
-    provider_id : str ,
-    token : str,
-    user_data : Dict[str, str],
-    default_user : cl.User,
-) -> Optional[cl.User]:
-    """
-    Handle the OAUTH Callback from GITHUB
-    RETURN THE USER OBJ IF AUTH IS SUCCESSFUL, none otherwise 
-    """
-    print(f"Provide : {provider_id}")
-    print(f"User Data : {user_data}")
+# @cl.oauth_callback
+# def oaut_callback(
+#     provider_id : str ,
+#     token : str,
+#     user_data : Dict[str, str],
+#     default_user : cl.User,
+# ) -> Optional[cl.User]:
+#     """
+#     Handle the OAUTH Callback from GITHUB
+#     RETURN THE USER OBJ IF AUTH IS SUCCESSFUL, none otherwise 
+#     """
+#     print(f"Provide : {provider_id}")
+#     print(f"User Data : {user_data}")
 
-    return default_user
+#     return default_user
 
 @cl.on_chat_start
 async def handle_chat_start():
