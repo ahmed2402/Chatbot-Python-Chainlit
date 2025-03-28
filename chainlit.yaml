@@ -3,7 +3,7 @@ chainlit: 2.4.1
 # Interface settings
 ui:
   name: "GoofyGPT"
-  description: "A simple Question Answering Stateful chatbot with GitHub authentication built with Python, UV, and Chainlit."
+  description: "A simple Question Answering Stateful chatbot with GitHub and Google authentication."
 
 # Message settings
 default_expand_messages: true
@@ -13,9 +13,14 @@ auth:
   required: true
   providers: 
     - github
+    - google
 
 # OAuth Configuration
 oauth_providers:
   github:
     client_id: ${OAUTH_GITHUB_CLIENT_ID}
-    client_secret: ${OAUTH_GITHUB_CLIENT_SECRET} 
+    client_secret: ${OAUTH_GITHUB_CLIENT_SECRET}
+
+  google:
+    client_id: ${OAUTH_GOOGLE_CLIENT_ID}
+    client_secret: ${OAUTH_GOOGLE_CLIENT_SECRET}
