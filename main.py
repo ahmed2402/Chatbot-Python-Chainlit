@@ -10,7 +10,7 @@ gemini_api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=gemini_api_key)
 
 model = genai.GenerativeModel(model_name="gemini-2.0-flash")
-
+#authentication
 @cl.oauth_callback
 def oaut_callback(
     provider_id : str ,
